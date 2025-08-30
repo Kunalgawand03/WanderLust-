@@ -1,0 +1,114 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row">
+  <div class="col-8 offset-2">
+    <h3>Create a New Listing</h3>
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+      <div class="form-text mb-3">
+        <p>All fields are required.</p>
+      </div>
+    <div class="mb-3">
+        <label for="title" class="form-label">Add a Catchy Title</label>
+        <input name="listing[title]" 
+        placeholder="enter title" 
+        type="text" 
+        class="form-control"
+        required/> 
+        <div class="valid-feedback">
+          Title looks good!
+        </div>
+      
+    <div class="mb-3"> 
+      <label for="description" class="form-label">description:</label>
+      <textarea
+        name="listing[description]"
+        class="form-control" 
+        required
+      ></textarea>
+      <div class="invalid-feedback">
+        Please enter a short description.
+    </div>
+
+    <!-- <div class="mb-3">
+     <label for="image" class="form-label">Image link:</label>
+      <input
+        name="listing[image]"
+        placeholder="enter image URL/Link"
+        type="text"
+        class="form-control" 
+      />
+      <div class="invalid-feedback">
+        Please provide an image link.
+    </div> -->
+
+    <div class="mb-3">
+     <label for="image" class="form-label">upload Image</label>
+      <input
+        name="listing[image]"
+        placeholder="enter image URL/Link"
+        type="file"
+        class="form-control" 
+        required
+      />
+    </div>
+
+    <div class="row">
+    <div class="mb-3 col-md-4">
+      <label for="price" class="form-label">Price</label>
+      <input name="listing[price]" 
+      placeholder="enter price" 
+      type="number" 
+      class="form-control"
+      required/>
+      <div class="invalid-feedback">
+        Please provide a price.
+    </div>
+
+  <div class="mb-3">
+  <div class="mb-3 col-md-4">
+  <label for="category" class="form-label">Category</label>
+  <select class="form-select" id="category" name="listing[category]" required>
+    <option value="">Select Category</option>
+    <option value="Trending">Trending</option>
+    <option value="Rooms">Rooms</option>
+    <option value="Iconic Cities">Iconic Cities</option>
+    <option value="Mountains">Mountains</option>
+    <option value="Castles">Castles</option>
+    <option value="Amazing Pools">Amazing Pools</option>
+    <option value="Camping">Camping</option>
+    <option value="Farms">Farms</option>
+    <option value="Arctic">Arctic</option>
+    <option value="Boats">Boats</option>
+   </select>
+  </div>
+  </div>
+
+
+    <div class="mb-3 col-md-8">
+      <label for="country" class="form-label">Country</label>
+      <input name="listing[country]" 
+      placeholder="enter country" 
+      type="text"
+      class="form-control"
+      required />
+      <div class="invalid-feedback">
+        Country name should not be empty.
+    </div>
+    </div>
+    
+    <div>
+      <label for="location" class="form-label">Location</label>
+      <input
+        name="listing[location]"
+        placeholder="enter location"
+        type="text"
+        class="form-control"
+        required
+      />
+      <div class="invalid-feedback">
+        location should be valid
+    </div>
+    
+      <button class="btn btn-dark add-btn mt-3">Add</button>
+    </form>
+  </div>
+</div>
